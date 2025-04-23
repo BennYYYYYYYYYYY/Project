@@ -49,7 +49,7 @@ Bi-LSTM 模型建構
 - 建立含 ticker、事件時間、估計期/事件期股價、報酬、模型預測值的 DataFrame
 
 ---
-📁 utils_experiment  
+## 📁 Utils_Experiment  
 支援性模組
 - 針對文章與句子進行 token 統計與輸入長度管理，支援 chunk 切割策略與模型輸入上限的設定，確保在實際生成階段不會出錯。
 - 設計與記錄不同系統提示（system prompt）以利 prompt 策略調整，並比對不同模型的回應差異。
