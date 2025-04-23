@@ -1,23 +1,38 @@
 # Master Thesis
 
-本專案為我的碩士論文研究開發儲存庫，主題聚焦於 **運用自然語言處理演算法與生成式 AI 模型，分析 ESG 新聞內容對股市異常報酬的影響**。  
+**自然語言處理演算法與生成式 AI 模型評測，分析 ESG 新聞內容對市場異常報酬影響**。  
 透過結合深度學習（Bi-LSTM、BERT、FinBERT、Further-pretrain FinBERT）、Generative AI（ChatGPT4o、Claude 3.7 Sonnet、Grok3、DeepSeek-V3、Gemma3-1B、LLaMA 3.2-1B）與事件研究法，進行演算法評測，以及驗證文字探勘變數與市場的關聯性。
 
 ---
 ## 📁 Langchain  
-使用 LangChain 封裝各類生成式 AI 模型，進行 ESG 新聞的零樣本 / 少樣本 / CoT 推理分析。  
-模組化設計每個模型對應的 Prompt 邏輯與輸出格式，支援 JSON 解析、結果結構統一化、錯誤排除等。  
-實作自動化流程，包含：few-shot 樣本更新、模型綁定、invoke 呼叫與結果儲存。
+建構 ESG 新聞分析的生成式 AI 推理流程，透過 LangChain 框架封裝多種 LLMs，包含：
+- **雲端模型**：OpenAI、Anthropic、DeepSeek、XAI 等
+- **地端模型**：整合 Ollama 架設的本地語言模型，提升本地運算與資料保密性
+- 利用 `PromptTemplate` 與 `FewShotPromptTemplate` 設計統一化的提示詞結構，自動化生成輸入格式  
+- 模型綁定、推理呼叫、自動解析 JSON 輸出、錯誤處理
+- 彈性支援 Zero-shot、Few-shot 與 Chain-of-thought Prompt Egineering
+- 多模型結果輸出格式統一，方便後續比較分析與統整處理
 
 ---
 
 ## 📁 Training_Model  
-實作 ESG 相關新聞的分類模型訓練流程，涵蓋：
-- LSTM/Bi-LSTM 模型架構與超參數設置
-- Hugging Face 上微調 BERT 與 FinBERT 模型
-- Tokenizer 前處理、Dataset 建立與 DataLoader 載入優化
-- TensorBoard 視覺化訓練進度與模型比較
-強調可重複性與模組化邏輯設計，支援後續實驗組合快速切換。
+訓練資料處理
+- 情緒（Positive / Neutral / Negative)、ESG（E / S / G / None）
+- 資料前處理、隨機抽樣與整合
+
+Hugging Face 進行微調，包括：
+- `Datasets` 載入、切分、轉換格式, `AutoTokenizer` 對文本進行斷詞處理
+- `AutoModelForSequenceClassification`（如 BERT、FinBERT），依任務設定分類層輸出維度
+- `Trainer` 完成訓練流程管理, DataCollatorWithPadding` 動態 padding
+- `TrainingArguments` 設定 batch size、learning rate、logging 頻率與模型儲存條件
+- `compute_metrics` 評估模型在 validation set 的 accuracy、F1-score、precision 與 recall
+
+Bi-LSTM 模型建構  
+- 自建 Bi-LSTM 雙向長短期記憶模型架構，支援多分類輸出與句子級分類
+- 包含 Embedding 層、雙向 LSTM 隱藏層、Dropout 抑制 overfitting、Linear 分類層
+- 支援 PyTorch 訓練流程與自定義 loss 計算
+
+
 ---
 ## 📁 Event_Study  
 實作事件研究法相關流程，依據經典文獻設計估計期與事件期分析邏輯。
