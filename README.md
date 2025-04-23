@@ -1,7 +1,7 @@
 # Master Thesis
 
-**自然語言處理演算法與生成式 AI 模型評測，分析 ESG 新聞內容對市場異常報酬影響**。  
-透過結合深度學習（Bi-LSTM、BERT、FinBERT、Further-pretrain FinBERT）、Generative AI（ChatGPT4o、Claude 3.7 Sonnet、Grok3、DeepSeek-V3、Gemma3-1B、LLaMA 3.2-1B）與事件研究法，進行演算法評測，以及驗證文字探勘變數與市場的關聯性。
+**NLP 演算法與生成式 AI 模型評測，分析 ESG 新聞內容對市場異常報酬影響**。  
+透過結合深度學習（Bi-LSTM)、Transformer 架構 (BERT、FinBERT、Further-pretrain FinBERT）、Generative AI（ChatGPT4o、Claude 3.7 Sonnet、Grok3、DeepSeek-V3、Gemma3-1B、LLaMA 3.2-1B）與事件研究法，進行演算法評測，以及驗證文字探勘變數與市場的關聯性。
 
 ---
 ## 📁 Langchain  
