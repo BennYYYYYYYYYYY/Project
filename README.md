@@ -21,8 +21,8 @@
 - 資料前處理、隨機抽樣與整合
 
 Hugging Face 進行微調，包括：
-- `Datasets` 載入、切分、轉換格式, `AutoTokenizer` 對文本進行斷詞處理
-- `AutoModelForSequenceClassification`（如 BERT、FinBERT），依任務設定分類層輸出維度
+- `Datasets` 載入、切分、轉換格式, `AutoTokenizer` 斷詞處理
+- `AutoModelForSequenceClassification`，設定分類層輸出維度
 - `Trainer` 完成訓練流程管理, DataCollatorWithPadding` 動態 padding
 - `TrainingArguments` 設定 batch size、learning rate、logging 頻率與模型儲存條件
 - `compute_metrics` 評估模型在 validation set 的 accuracy、F1-score、precision 與 recall
