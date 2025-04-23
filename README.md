@@ -4,8 +4,8 @@
 透過結合深度學習（Bi-LSTM、BERT、FinBERT、Further-pretrain FinBERT）、Generative AI（ChatGPT4o、Claude 3.7 Sonnet、Grok3、DeepSeek-V3、Gemma3-1B、LLaMA 3.2-1B）與事件研究法，進行演算法評測，以及驗證文字探勘變數與市場的關聯性。
 
 ---
-## 📁 langchain  
-使用 LangChain 封裝各類生成式 AI 模型（ChatGPT, Claude, Grok 等），進行 ESG 新聞的零樣本 / 少樣本 / CoT 推理分析。  
+## 📁 Langchain  
+使用 LangChain 封裝各類生成式 AI 模型，進行 ESG 新聞的零樣本 / 少樣本 / CoT 推理分析。  
 模組化設計每個模型對應的 Prompt 邏輯與輸出格式，支援 JSON 解析、結果結構統一化、錯誤排除等。  
 實作自動化流程，包含：few-shot 樣本更新、模型綁定、invoke 呼叫與結果儲存。
 
