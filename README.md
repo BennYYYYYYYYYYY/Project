@@ -7,7 +7,7 @@
 ## 📁 Langchain  
 建構 ESG 新聞分析的生成式 AI 推理流程，透過 LangChain 框架封裝多種 LLMs，包含：
 - **雲端模型**：OpenAI、Anthropic、DeepSeek、XAI 等
-- **地端模型**：整合 Ollama 架設的本地語言模型，提升本地運算與資料保密性
+- **地端模型**：整合 Ollama 架設的本地語言模型，LLaMA、Gemma3 小參數模型
 - 利用 `PromptTemplate` 與 `FewShotPromptTemplate` 設計統一化的提示詞結構，自動化生成輸入格式  
 - 模型綁定、推理呼叫、自動解析 JSON 輸出、錯誤處理
 - 彈性支援 Zero-shot、Few-shot 與 Chain-of-thought Prompt Egineering
