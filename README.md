@@ -15,7 +15,7 @@
 
 ---
 
-## 📁 Training_Model  
+## 📁 Model_Training_Relative  
 訓練資料處理
 - 情緒（Positive / Neutral / Negative)、ESG（E / S / G / None）
 - 資料前處理、隨機抽樣與整合
@@ -60,7 +60,7 @@ Bi-LSTM 模型建構
 
 ---
 
-## 📁 Testing_Data_process  
+## 📁 Model_Testing_Relative
 整體流程以 `pandas` 為主軸，進行大量資料欄位整理、句子切分、標註合併與分類結果整併等等。
 - 對原始新聞進行句子切分與編碼，建立清晰的段落層級結構（句子編號、新聞 ID 對應、段落對齊）
 - 整合 researcher 標註與多個 NLP 模型的預測結果，處理欄位對應、資料去重與欄位重構
@@ -70,7 +70,7 @@ Bi-LSTM 模型建構
   
 ---
 
-## 📁 Result_post_process
+## 📁 Result_Process
 整體以 `pandas` 以及統計操作為主，結果整併與格式標準化 
 - 將各模型輸出整合成一份 dataframe，支援句子層級與文章層級分析。
 - 建立統一欄位命名規則與欄位順序，讓所有模型結果具備可比性。
