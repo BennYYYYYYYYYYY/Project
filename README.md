@@ -30,7 +30,7 @@ Hugging Face 進行微調，包括：
 Bi-LSTM 模型建構  
 - 自建 Bi-LSTM 雙向長短期記憶模型架構，支援多分類輸出與句子級分類
 - 包含 Embedding 層、雙向 LSTM 隱藏層、Dropout 抑制 overfitting、Linear 分類層
-- 支援 PyTorch 訓練流程與自定義 loss 計算
+
 
 
 ---
